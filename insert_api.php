@@ -15,10 +15,11 @@ $data   =   json_decode(file_get_contents("php://input"),true);
 
 $name   = $data['name'];
 $email  = $data['email'];
+$password  = password_hash($data['password'], PASSWORD_BCRYPT);
 $phone  = $data['phone'];
 $city   = $data['city'];
 
-$query = "INSERT INTO users(name,email,phone,city) VALUES('".$name."','".$email."','".$phone."','".$city."')";
+$query = "INSERT INTO users(name,email,password,phone,city) VALUES('".$name."','".$email."','".$password."','".$phone."','".$city."')";
 
 $result = mysqli_query($conn,$query);
 
