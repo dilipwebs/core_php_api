@@ -5,8 +5,7 @@ header('Access-Control-Allow-Methods:GET,POST,OPTIONS');
 header('Access-Control-Allow-Headers:*');
 header('Content-type:application/json');
 
-$conn       =   mysqli_connect('localhost','root','','api_dev') or die('mysqli not connected');
-
+require('config/database.php');
 $query      = "SELECT * FROM users";
 $result     = mysqli_query($conn,$query);
 $count_rows = mysqli_num_rows($result);

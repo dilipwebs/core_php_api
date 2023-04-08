@@ -5,8 +5,7 @@ header('Access-Control-Allow-Methods:GET,POST,OPTIONS');
 header('Access-Control-Allow-Headers:*');
 header('Content-type:application/json');
 
-$conn       =   mysqli_connect('localhost','root','','api_dev') or die('mysqli not connected');
-
+require('config/database.php');
 // update api url = https://www.example.com/api/update_data.php/1
 
 $id = trim($_SERVER['PATH_INFO'],'/');
